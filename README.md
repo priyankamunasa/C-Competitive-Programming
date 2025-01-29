@@ -141,3 +141,88 @@ Input value: 6
 INVALID INPUT
 Number of candies left: 10
 ```
+**Problem Statement 3**:
+
+**"Delivery Time Estimator"**
+
+A logistics company needs an automated system to estimate the delivery processing time based on package weight. Given the weight of a package, determine the estimated time required for processing before dispatch.
+
+Processing Criteria:
+1 ≤ weight ≤ 2000 → Estimated Time: 25 Minutes
+2001 ≤ weight ≤ 4000 → Estimated Time: 35 Minutes
+4001 ≤ weight ≤ 7000 → Estimated Time: 45 Minutes
+weight > 7000 → "Maximum capacity reached" (Package cannot be processed)
+weight < 1 → "INVALID INPUT"
+
+**Algorithm:**
+
+1. Initialize a variable w to store the package weight.
+2. Prompt the user to enter the weight.
+3. Check the weight range:
+4. If 1 ≤ w ≤ 2000, print "Time Estimated: 25 Minutes".
+5. Else if 2001 ≤ w ≤ 4000, print "Time Estimated: 35 Minutes".
+6. Else if 4001 ≤ w ≤ 7000, print "Time Estimated: 45 Minutes".
+7. Else if w > 7000, print "Maximum capacity reached".
+8. Else, print "INVALID INPUT".
+9. End the program.
+
+**Code:**
+```c
+#include <stdio.h>
+int main()
+{
+	int w;//w--weight
+	printf("weight given:");
+	scanf("%d",&w);
+	if(w>=1 && w<=2000)
+	{
+		printf("Time Estimated: 25 Minutes\n");
+	}
+	else if(w>=2001 && w<=4000)
+	{
+		printf("Time Estimated: 35 Minutes\n");
+	}
+	else if(w>=4000 && w<=7000)
+	{
+		printf("Time Estimated: 45 Minutes\n");
+	} 
+	else if(w>7000)
+	{
+		printf("maximum capacity reached\n");
+	}
+	else
+	{
+		printf("INVALID INPUT\n");
+	}
+	return 0;
+}
+```
+**Sample Input and Output:**
+
+**Input 1:**
+```
+1800
+```
+**Output:**
+```
+Weight given: 1800
+Time Estimated: 25 Minutes
+```
+**Input 2:**
+```
+3000
+```
+**Output 2:**
+```
+Weight given: 3000
+Time Estimated: 35 Minutes
+```
+**Input 3:**
+```
+-5
+```
+**Output:**
+```
+Weight given: -5
+INVALID INPUT
+```
