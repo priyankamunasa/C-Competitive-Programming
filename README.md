@@ -226,3 +226,56 @@ Time Estimated: 35 Minutes
 Weight given: -5
 INVALID INPUT
 ```
+**Problem Statement 4:**
+
+**"Mirror of Time"**
+
+In an ancient civilization, scholars used a special "Mirror of Time" to decode hidden messages within numbers. The mirror reveals the reverse of a given number, helping historians decipher lost numerical sequences.
+
+Your task is to write a program that simulates the Mirror of Time by reversing a given integer.
+
+**Algorithm:**
+
+1. Start by taking an integer input n from the user.
+2. Initialize rev = 0 to store the reversed number.
+3. Store the original value of n in a temporary variable temp for future reference.
+4. While n is not zero:
+
+   Extract the last digit using rem = n % 10.
+   
+   Append this digit to rev by computing rev = rev * 10 + rem.
+   
+   Remove the last digit from n by performing integer division n = n / 10.
+5. After the loop terminates, print the reversed number.
+
+**Code:**
+```c
+#include <stdio.h>
+
+int main()
+{
+    int n,rev=0,rem;
+    printf("enter number:");
+    scanf("%d",&n);
+    int temp=n;
+    while(n!=0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    printf("reversed number:%d\n",rev);
+    return 0;
+}
+```
+
+**Sample Input and Output:**
+
+**Input 1:**
+```
+enter number: 12345
+```
+**Output 1:**
+```
+reversed number: 54321
+```
