@@ -294,7 +294,8 @@ A teacher wants to help students understand even numbers by counting and display
  	If the current number i is even (i % 2 == 0), print it.
 
 	If i is within the range [21, 60], increment the counter c.
-4.After exiting the loop, print the total count of even numbers between 21 and 60.
+
+4. After exiting the loop, print the total count of even numbers between 21 and 60.
 
 **Code:**
 ```c
