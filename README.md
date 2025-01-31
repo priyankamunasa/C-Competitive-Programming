@@ -279,3 +279,65 @@ enter number: 12345
 ```
 reversed number: 54321
 ```
+**Problem Statement 5**:
+
+**"Counting Even Numbers in a Range"**
+
+A teacher wants to help students understand even numbers by counting and displaying all even numbers within a given range. Your task is to write a program that takes two numbers as input (start and end values) and prints all even numbers within that range. Additionally, the program should count the number of even numbers between 21 and 60.
+
+**Algorithm:**
+
+1. Start by taking two integers, m and n, as input from the user (representing the start and end of the range).
+2. Initialize a counter variable c = 0 to keep track of even numbers between 21 and 60.
+3. Use a for loop to iterate from m to n.
+    
+ 	If the current number i is even (i % 2 == 0), print it.
+
+	If i is within the range [21, 60], increment the counter c.
+4.After exiting the loop, print the total count of even numbers between 21 and 60.
+
+**Code:**
+```c
+#include<stdio.h>
+int main()
+{
+    int i,c=0,m,n;
+    printf("enter start and end value:");
+    scanf("%d%d",&m,&n);
+    for(i=m;i<=n;i++)
+    {
+        if(i%2==0)
+        {
+            printf("%d\n",i);
+            c++;
+        }
+    }
+    /*for(i=21;i<=60;i++)
+    {
+        if(i%2==0)
+        {
+            printf("%d\n",i);
+            c++;
+        }
+    }*/
+    printf("total number of even numbers btw 21 and 60 are %d",c);
+}
+```
+**Sample Input:**
+```
+enter start and end value: 10 30
+```
+**Sample Output:**
+```
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+```
