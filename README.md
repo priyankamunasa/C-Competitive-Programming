@@ -297,6 +297,7 @@ A teacher wants to help students understand even numbers by counting and display
 
 4. After exiting the loop, print the total count of even numbers between 21 and 60.
 
+
 **Code:**
 ```c
 #include<stdio.h>
@@ -341,4 +342,78 @@ enter start and end value: 10 30
 26
 28
 30
+```
+**Problem Statement 6:**
+
+**"Fractional Leap Series"**
+
+A young mathematician is fascinated by a unique numerical sequence. The sequence consists of fractions where the numerator starts at 1 and increases by 2 in each step, while the denominator starts at 2 and also increases by 2 in each step. The sum of the first N terms of this sequence determines a special value.
+
+Write a program to compute and display the sum of the first N terms of this fractional series:
+
+S=(1/2) +(3/4)+ (5/6) +....series
+
+Given an integer N, your task is to calculate and print the sum of the first N terms with high precision.
+
+**Algorithm**
+
+1. Start by taking an integer input N representing the number of terms.
+2. Initialize:
+   
+  numerator = 1
+  
+ denominator = 2
+ 
+ sum = 0.0
+ 
+3. Loop from 1 to N, and in each iteration:
+
+4. Compute the fraction as numerator/denominator and add it to sum.
+
+ Increase the numerator by 2.
+ 
+ Increase the denominator by 2. 
+
+5. Print the computed sum with high precision.
+**Code**
+```c
+#include <stdio.h>
+int main()
+{
+     int n;
+    printf("Enter the number of terms in the series: ");
+    scanf("%d", &n);
+   int numerator = 1;
+   int denominator = 2;
+    double sum = 0.0;
+    /*for (int i = 1; i <= n; i+=2) {
+        sum += (double)i /(i+1); 
+    }*/
+    for (int i = 1;i <=n; i++) {
+        sum += (double)numerator / denominator; 
+        numerator += 2; 
+        denominator += 2; 
+    }
+    printf("%lf",sum);
+    return 0;
+}
+```
+ 
+**Sample Inputs and Outputs**
+
+**Input 1:**
+```
+Enter the number of terms in the series: 3
+```
+**Output 1:**
+```
+Sum of the series: 2.083333
+```
+**Input 2:**
+```
+Enter the number of terms in the series: 5
+```
+**Output 2:**
+```
+Sum of the series: 3.858333
 ```
