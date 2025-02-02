@@ -417,3 +417,68 @@ Enter the number of terms in the series: 5
 ```
 Sum of the series: 3.858333
 ```
+**Problem Statement 7:**
+
+**"Factorial Square Sum Challenge"**
+
+In a futuristic research lab, scientists are analyzing a unique mathematical sequence that combines factorials and squared numbers. Given a number 
+𝑛, the series is defined as:
+
+S=1+(2^2/2!)+(3^2/3!)+.... series
+
+Your task is to write a program that calculates the sum of this series for a given 
+
+**Algorithm:**
+
+1. Input: Read an integer n from the user (number of terms).
+2. Initialize: Set sum = 0.0 to store the total sum.
+3. Loop from 1 to n:
+   
+	Compute the factorial i! iteratively.
+
+	Compute the term (i^2)/i!
+
+	Add the term to sum.
+4. Output: Print the computed sum with six decimal places.
+
+**Code:**
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the number of terms in the series: ");
+    scanf("%d", &n);
+
+    double sum = 0.0;
+    
+    for (int i = 1; i <= n; i++) {
+        int fact = 1; 
+        for (int j = 1; j <= i; j++) {
+            fact *= j; 
+        }
+        sum += (double)(i * i) / fact; 
+    }
+
+    printf("The sum of the series is: %.6lf\n", sum);
+    return 0;
+}
+```
+**Sample Input & Output:**
+
+**Input 1:**
+```
+Enter the number of terms in the series: 5
+```
+**Output 1:**
+```
+The sum of the series is: 2.708333
+```
+**Input 2:**
+```
+Enter the number of terms in the series: 7
+```
+**Output 2:**
+```
+The sum of the series is: 2.718056
+```
