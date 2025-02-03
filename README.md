@@ -482,3 +482,67 @@ Enter the number of terms in the series: 7
 ```
 The sum of the series is: 2.718056
 ```
+**Problem Statement 8:**
+
+**"Alternating Power Sequence"**
+
+A mathematician discovers a unique sequence where each term follows a special alternating power pattern:
+
+If n is even, the term is computed as:
+
+	T(n)=3^(n/2-1)-->here ^ refers to power
+ 
+If n is odd, the term is computed as:
+
+	T(n)=2^(n/2)
+ 
+Given an integer n, write a program to find the nth term in this sequence.
+
+**Code**:
+```c
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+ int n;
+ printf("enter n:");
+ scanf("%d",&n);
+ if(n%2==0)//when n is even
+ {
+     int a=pow(3,(n/2)-1);
+     printf("%d",a);
+ }
+ else// when n is odd term
+ {
+     int b=pow(2,n/2);
+     printf("%d",b);
+ }
+    return 0;
+}
+```
+**Algorithm**
+1. Take an integer n as input.
+2. If n is even, compute:
+	T(n)=3^(n/2-1)
+3. If n is odd, compute:
+ 	T(n)=2^(n/2)
+4. Print the computed term.
+   
+**Sample Inputs and Outputs**
+
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+3
+```
+**Input 2:**
+```
+enter n: 5
+```
+**Output 2:**
+```
+4
+```
