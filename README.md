@@ -546,3 +546,77 @@ enter n: 5
 ```
 4
 ```
+**Problem Statement 9:**
+
+**"Alternating Multiples Sequence"**
+
+A mathematician has discovered a fascinating sequence that follows an alternating pattern based on position:
+
+At odd positions (1st, 3rd, 5th,...), the terms are multiples of 7.
+At even positions (2nd, 4th, 6th,...), the terms are multiples of 6.
+The sequence follows the pattern:
+
+	0,0,7,6,14,12,21,18,28,24,…
+
+Where:
+
+Odd-indexed terms follow: 	T(n)=7×(n//2)
+
+Even-indexed terms follow :	T(n)=6×( n/2-1)
+
+Your task is to write a program that takes an integer n and prints the nth term of this sequence.
+
+**Algorithm**
+1. Take an integer n as input.
+2. If n is even, compute the term using:	T(n)=6×(n/2-1)
+3. If n is odd, compute the term using:		T(n)=7x(n/2)
+4. Print the computed value.
+
+**Code:**
+```c
+//series....0,0,7,6,14,12,21,18,28,24,....
+//odd positions....7 multiples
+//even positions....6 multiples
+//7*0,6*0,7*1,6*1,7*2,6*2,7*3,6*3,....
+#include <stdio.h>
+int main()
+{
+ int n,x,y;
+ printf("enter n:");
+ scanf("%d",&n);
+ if(n%2==0)//even position ...6 multiples
+ {
+     x=6*((n/2)-1);
+     printf("%d",x);
+ }
+ else//odd position...7 multiples
+ {
+    y=7*(n/2);
+     printf("%d",y);
+ }
+    return 0;
+}
+```
+   
+**Sample Inputs and Outputs**
+
+**Input 1:**
+```
+enter n: 5
+```
+Calculation:
+Since 5 is odd:
+T(5)=7×(5//2)=7×2=14
+
+**Output 1:**
+```
+14
+```
+**Input 2:**
+```
+enter n: 6
+```
+**Output 2:**
+```
+12
+```
