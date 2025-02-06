@@ -6,7 +6,7 @@ Write a C program to swap two integers without using a temporary variable. The p
 **Input**:
 The program should prompt the user to input two integers.
 
-**Output**:
+**Output**: 
 The program should print the values of the integers before and after swapping.
 If either of the integers is zero, print a message indicating that swapping is not possible.
 
