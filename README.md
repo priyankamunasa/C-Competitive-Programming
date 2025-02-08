@@ -620,3 +620,122 @@ enter n: 6
 ```
 12
 ```
+**Problem Statement 10:**
+
+**"Pattern Printing: Smiley Matrix" 😊**
+
+A programmer is experimenting with pattern printing and wants to display a cube-shaped matrix of smiley faces (^_^). Given an integer n, write a program that prints an n × n grid of smiley faces, where each row contains n smiley faces separated by spaces.
+
+**Algorithm:**
+
+1. Take an integer n as input.
+2. Loop from 1 to n (outer loop for rows):
+3. Cube Matrix: Print n smiley faces in each row.
+4. Print an empty line after each row to improve readability.
+
+**Code:**
+```c
+#include <stdio.h>
+int main()
+{
+    int n;
+    printf("enter n:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        //cube matrix
+        for(int j=1;j<=n;j++)
+        {
+            printf("^_^ ");
+        }
+        printf("\n");
+        printf("\n");
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+^_^ ^_^ ^_^ ^_^ 
+
+^_^ ^_^ ^_^ ^_^ 
+
+^_^ ^_^ ^_^ ^_^ 
+
+^_^ ^_^ ^_^ ^_^ 
+```
+**Problem Statement 11:**
+
+**"Dollar Triangle" 💰**
+
+A banker is designing a pattern for a promotional event where dollar signs ($) are arranged in a triangular formation. The number of rows in the triangle is determined by an integer n.
+
+Write a program that takes an integer n as input and prints a lower triangular pattern where the first row has 1 dollar sign, the second row has 2, and so on, until the nth row.
+
+**Algorithm:**
+
+1. Take an integer n as input.
+2. Loop from 1 to n (outer loop for rows):
+3. Loop from i down to 1 (inner loop) to print i dollar signs in the ith row.
+4. Print a newline (\n) after each row.
+5. Print an additional newline for spacing.
+
+**Code:**
+```c
+#include <stdio.h>
+int main()
+{
+    int n;
+    printf("enter n:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        //lower triangle 
+        for(int j=i;j>=1;j--)
+        {
+            printf("$ ");
+        }
+        
+        printf("\n");
+        printf("\n");
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+$ 
+
+$ $ 
+
+$ $ $ 
+
+$ $ $ $
+```
+
+**Input 2:**
+```
+enter n: 6
+```
+**Output 2:**
+```
+$ 
+
+$ $ 
+
+$ $ $ 
+
+$ $ $ $ 
+
+$ $ $ $ $ 
+
+$ $ $ $ $ $ 
+```
