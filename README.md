@@ -739,3 +739,146 @@ $ $ $ $ $
 
 $ $ $ $ $ $ 
 ```
+**Problem statement 12:**
+
+**Hollow Square Pattern Generator Using "@"**
+
+A designer needs to generate a hollow square pattern using the @ symbol. The program should take an integer n as input and print an n × n square where:
+
+The first and last rows are completely filled with @.
+The first and last columns are filled with @.
+The inner area of the square is left blank (filled with spaces).
+
+**Algorithm**
+1. Input:
+	Read an integer n (the size of the square).
+2. Processing:
+	Loop through each row i from 1 to n.
+	For each row, loop through each column j from 1 to n.
+	If the current position is on the border (i.e., if i == 1, i == n, j == 1, or j == n), print the @ symbol.
+	Otherwise, print a space " ".
+3. After processing each row, move to the next line.
+
+**Code:**
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter n: ");
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+        {
+            if(i == 1 || i == n || j == 1 || j == n)
+            {
+                printf("@");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+@@@@
+@  @
+@  @
+@@@@
+```
+**Input 2:**
+```
+enter n: 6
+```
+**Output 2:**
+```
+@@@@@@
+@    @
+@    @
+@    @
+@    @
+@@@@@@
+```
+**Problem Statement 13:**
+
+**Numeric Hollow Square Pattern Generator**
+
+A programmer wants to create a hollow square pattern where the border is marked by numbers instead of symbols. The program should take an integer n as input and print an n × n square. In the pattern:
+
+The first and last rows display the numbers from 1 to n.
+The first and last columns display the corresponding column numbers.
+The inner area of the square is left blank (filled with spaces).
+
+**Algorithm**
+1. Input:
+	Read an integer n (the size of the square).
+2. Processing:
+	Loop through each row i from 1 to n.
+	For each row, loop through each column j from 1 to n.
+	If the current position is on the border (i.e., if i == 1, i == n, j == 1, or j == n), print the column number (j).
+	Otherwise, print a space " ".
+3. After processing each row, move to the next line.
+
+**Code:**
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter n: ");
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+        {
+            // If at the border, print the column number
+            if(i == 1 || i == n || j == 1 || j == n)
+            {
+                // To print "@" instead, use: printf("@");
+                printf("%d", j);
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+1234
+1  4
+1  4
+1234
+```
+**Input 2:**
+```
+enter n: 5
+```
+**Output 2:**
+```
+12345
+1   5
+1   5
+1   5
+12345
+```
+
+
