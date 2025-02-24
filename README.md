@@ -880,5 +880,79 @@ enter n: 5
 1   5
 12345
 ```
+**Problem Statement 14:**
 
+**The Pyramid of Wealth**
+
+The Kingdom of Algoria has a grand tradition of constructing pyramids out of gold coins, symbolized as $. Each pyramid follows a specific structure:
+
+The pyramid has n rows.
+The base of the pyramid consists of 2n - 1 coins.
+The pyramid is hollow, meaning that only the boundary coins are visible, except for the base row, which is completely filled.
+Your task is to write a program that takes an integer n as input and prints a hollow pyramid of $ symbols.
+
+**Algorithm:**
+
+1. Take input n, which represents the height of the pyramid.
+2. Iterate from 1 to n to generate rows of the pyramid.
+3. Print spaces before the first $ in each row to ensure center alignment. The number of spaces required is (n - i), where i is the current row number.
+4. Print $ symbols:
+5. Print $ at the start and end of the row.
+6. Print spaces between the $ symbols to create the hollow effect.
+7. For the last row (i == n), print a fully filled row of $.
+8. Move to the next line after printing each row.
+
+**Code:**
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter n:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-i;j++)
+        {
+            
+          printf(" ");
+        
+        }
+        for(int j=1;j<=(2*i-1);j++)
+        {
+            if(j==1||i==n||j==(2*i-1))
+            {
+            printf("$");
+        }
+        else
+        {
+            printf(" ");
+        }
+        }
+        printf("\n");
+    }
+}
+```   
+**Input 1:**
+```
+5
+```
+**Output 1:**
+```
+    $    
+   $ $   
+  $   $  
+ $     $ 
+$$$$$$$$$
+```
+**Input 2:**
+```
+3
+```
+**Output 2:**
+```
+  $  
+ $ $ 
+$$$$$
+```
 
