@@ -955,4 +955,81 @@ $$$$$$$$$
  $ $ 
 $$$$$
 ```
+**Problem Statement 15:**
 
+**X-Pattern with Border in a Square**
+
+Write a program to generate an X-pattern inside a bordered square. The program should take an integer n as input and print an n × n pattern where:
+
+The first and last rows are completely filled with *.
+The first and last columns are also completely filled with *.
+The diagonals (both \ and /) are marked with *, forming an X-shape inside the square.
+The remaining inner region is left blank (filled with spaces).
+
+**Algorithm**
+
+1. Input:
+	Read an integer n (size of the square).
+2. Processing:
+	Loop through each row i from 1 to n.
+	For each row, loop through each column j from 1 to n.
+	If the position is at:
+	The border (i == 1, i == n, j == 1, or j == n).
+	The primary diagonal (i == j).
+	The secondary diagonal (i + j == n + 1).
+3. Print * for these conditions.
+4. Otherwise, print a space.
+5. Move to a new line after printing all columns of a row.
+**Code**
+```c
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter n: ");
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+        {
+            // Conditions for printing '*':
+            if(i == 1 || i == n || j == 1 || j == n || j == i || i + j == n + 1)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n"); // Move to the next line
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 7
+```
+**Output 1:**
+```
+*******
+**   **
+* * * *
+*  *  *
+* * * *
+**   **
+*******
+```
+**Input 2:**
+```
+enter n: 5
+```
+**Output 2:**
+```
+*****
+** **
+* * *
+** **
+*****
+```
