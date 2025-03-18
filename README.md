@@ -1033,3 +1033,81 @@ enter n: 5
 ** **
 *****
 ```
+**Problem Statement 16**
+
+**Right-Angled Triangle with Continuous Numbers**
+
+Write a C program that prints a right-angled triangle pattern where numbers increment continuously starting from 1. The program should take an integer n as input and print n rows of numbers, where:
+
+The first row contains 1 number.
+
+The second row contains 2 numbers.
+
+The third row contains 3 numbers, and so on until n rows.
+
+The numbers increment consecutively (1, 2, 3, 4, ...).
+
+**Algorithm**
+
+1. Input:
+
+Read an integer n (the number of rows).
+
+2. Initialize:
+
+Start with x = 1 (the number to be printed).
+
+3. Processing:
+
+Loop i from 1 to n for rows.
+
+Inside the row, loop j from 1 to i (print i numbers in the i-th row).
+
+4. Print the current value of x and increment x by 1.
+
+After each row, move to the next line.
+
+**Code**
+```c
+#include<stdio.h>
+int main()
+{
+    int n, x = 1;
+    printf("enter n: ");
+    scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            printf("%d", x);
+            x++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+**Input 1:**
+```
+enter n: 4
+```
+**Output 1:**
+```
+1
+23
+456
+78910
+```
+
+**Input 2:**
+```
+enter n: 5
+```
+**Output 2:**
+```
+1
+23
+456
+78910
+1112131415
+```
