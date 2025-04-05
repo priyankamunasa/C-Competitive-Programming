@@ -1111,3 +1111,60 @@ enter n: 5
 78910
 1112131415
 ```
+**Problem Statement 17:** 
+
+**Number Pyramid of Knowledge**
+
+In the mystical land of Numeria, scholars believe that numbers arranged in a unique pyramid hold the key to enlightenment. Each row of the pyramid must contain consecutive natural numbers starting from 1, and each subsequent row contains one more number than the previous.
+
+As the royal programmer of Numeria, your task is to write a program that prints the sacred Number Pyramid of Knowledge with n levels.
+
+Each level contains increasing numbers, continuing from where the previous row left off. You are to generate this pyramid to aid the scholars in their studies.
+
+**Algorithm:**
+
+1. Start with x = 1, which keeps track of the current number to print.
+
+2. Read input n (the number of levels of the pyramid).
+
+3. For each row i from 1 to n:
+
+Loop j from 1 to i:
+
+Print the current value of x
+
+Increment x by 1
+
+Print a newline after each row.
+
+**Code **
+```c
+#include<stdio.h>
+int main()
+{
+    int n,x=1;
+    printf("enter n:");
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf("%d",x);
+            x++;
+        }
+        printf("\n");
+    }
+}
+```
+**Sample Input 1:**
+```
+4
+```
+
+**Sample Output 1:**
+```
+1
+23
+456
+78910
+```
