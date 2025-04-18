@@ -1168,3 +1168,73 @@ int main()
 456
 78910
 ```
+**Problem Statement 18:**
+
+**Pascal's Pyramid of Wisdom**
+
+In the mystical land of Mathoria, ancient scrolls contain a sacred number pattern known to grant wisdom and clarity to those who understand its structure. This pattern, called the Pascal's Pyramid, holds the secrets of combinations, patterns, and powers.
+
+As the royal coder of Mathoria, your task is to write a program that generates Pascal's Triangle up to a given number of rows. The triangle is aligned beautifully with each row centered, representing the coefficients of the binomial expansion.
+
+**Algorithm**
+
+1.	Input the number of rows n from the user.
+
+2.	Loop through rows from 0 to n-1:
+
+For each row i, print n-i spaces to center-align the triangle.
+
+3.	Then print the elements of Pascal's Triangle using the combination formula:
+C(i,j)= 
+j!(i−j)!
+i!
+​
+C(i,j)=C(i,j−1)× 
+j
+i−j+1
+​
+5.	Print each row on a new line with formatted spacing to maintain triangle shape.
+
+**Code:**
+```c
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,row,s,c;
+    printf("enter the value of n:");
+    scanf("%d",&row);
+    for(int i=0;i<row;i++)
+    {
+        for(int s=1;s<=row-i;s++)
+        {
+            printf("  ");
+        }
+        for(int j=0;j<=i;j++)
+        {
+            if(j==0||i==0)
+            {
+                c=1;
+            }
+            else
+            {
+                c=c*(i-j+1)/j;
+            }
+            printf("%4d",c);
+        }
+        printf("\n");
+    }
+}
+```
+**Sample Input**
+```
+5
+```
+**Sample Output**
+```
+          1
+        1   1
+      1   2   1
+    1   3   3   1
+  1   4   6   4   1
+```
