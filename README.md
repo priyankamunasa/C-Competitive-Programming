@@ -1238,3 +1238,58 @@ int main()
     1   3   3   1
   1   4   6   4   1
 ```
+
+**Problem Statement 19:**
+
+**"Digit Domination"**
+
+In the world of numerica, every digit in a number fights for dominance. Each digit claims to be the strongest, but only one can rise above the rest — the largest digit. As the Grand Judge of Digitaria, your job is to evaluate a given number and declare the most dominant digit in it.
+
+Design a program that takes a non-negative integer as input and identifies the largest digit among all the digits in that number.
+
+**Algorithm:**
+
+1. Start Input a number n
+
+2. Initialize a variable large = 0 to hold the largest digit found so far
+
+3. Repeat while n is not 0:
+	a. Extract the last digit using rem = n % 10
+	b. If rem > large, update large = rem
+	c. Remove the last digit from n using n = n / 10
+
+4. Display the largest digit
+
+**Code:**
+```c
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,rem,large=0;
+    printf("enter no:");
+    scanf("%d",&n);
+    while(n!=0)
+    {
+        rem=n%10;
+        if(rem>large)
+        {
+            large=rem;
+        }
+        n=n/10;
+    }
+    printf("Largest digit in the number is %d.",large);
+}
+```
+**Input 1:**
+
+A positive integer from the user
+```
+enter no: 49382
+```
+**Output 1 :**
+
+The largest digit in the number
+```
+Largest digit in the number is 9.
+```
