@@ -1293,3 +1293,70 @@ The largest digit in the number
 ```
 Largest digit in the number is 9.
 ```
+**Problem Statement 20:**
+
+**"Digit Flip: Swap the Extremes"**
+
+In the mysterious land of Digitania, numbers are magical beings. The first digit rules with pride and the last digit dances at the tail. One day, they decide to swap roles for fun! Write a program that takes any positive number and swaps its first and last digits, letting the inner digits remain untouched.
+Absolutely! Here's the **algorithm with serial numbers** that you can **copy directly** for your documentation or report:
+
+---
+
+**Algorithm :**
+
+1. Start
+2. Input a positive integer `n`
+3. Find the number of digits** in the number
+
+   * Use `digit = (int)log10(n)` to get the position of the first digit
+4. Extract the first digit**
+
+   * `first = n / pow(10, digit)`
+5. Extract the last digit
+
+   * `last = n % 10`
+6. Extract the middle part** of the number (excluding first and last digits)
+
+   * `middle = n % (int)pow(10, digit)`
+   * `middle = middle - last`
+7. Construct the new number** after swapping
+
+   * `swapped = last * pow(10, digit) + middle + first`
+8. Print the swapped number
+9. End
+
+**Code:**
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, first, last, digits, swapped, middle;
+    printf("Enter the number: ");
+    scanf("%d", &n);
+
+    digits = (int)log10(n); // Get the position of the first digit (e.g., 2345 => 3)
+    first = n / pow(10, digits); // Extract the first digit
+    last = n % 10;               // Extract the last digit
+
+    // Remove the first digit and last digit, keep middle part
+    middle = n % (int)pow(10, digits); // removes the first digit
+    middle = middle - last;            // removes the last digit
+
+    // Construct the swapped number
+    swapped = last * pow(10, digits) + middle + first;
+
+    printf("Swapped number: %d\n", swapped);
+    return 0;
+}
+```
+**Input:**
+```
+Enter the number: 9021
+```
+**Output:**
+```
+Swapped number: 1029
+```
+
+
