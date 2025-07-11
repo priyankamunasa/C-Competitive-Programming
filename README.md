@@ -1359,4 +1359,85 @@ Enter the number: 9021
 Swapped number: 1029
 ```
 
+**Problem Statement 21:**
 
+**"The Magical Sum"**
+
+In the enchanted world of numerics, some numbers are considered magical — they hold a mysterious power. A number is called a magic number if the repeated sum of its digits eventually results in 1.
+
+Your task is to write a program that determines whether a given number is magical or not.
+
+ **Algorithm:**
+ 
+1.Start
+
+2.Input a number n
+
+3.Store the original value of n in a variable original
+
+Repeat the following steps while n is greater than or equal to 10:
+
+4.1 Set sum = 0
+	2 While n > 0:
+	
+ 	Get the last digit: digit = n % 10
+
+	Add it to sum
+
+	Remove the last digit: n = n / 10
+
+ 	Set n = sum
+
+5. After the loop, if n == 1, then:
+
+	Print "original is a magic number"
+
+	Else:
+
+	Print "original is not a magic number"
+
+6. End
+
+**Code:**
+```c
+#include <stdio.h>
+
+int main()
+{
+    int n, sum, digit, original;
+    printf("enter value of n: ");
+    scanf("%d", &n);
+    original = n;
+
+    while(n >= 10)
+    {
+        sum = 0;
+        while(n > 0)
+        {
+            digit = n % 10;
+            sum += digit;
+            n /= 10;
+        }
+        n = sum;
+    }
+
+    if(n == 1)
+    {
+        printf("%d is a magic number.", original);
+    }
+    else
+    {
+        printf("%d is not a magic number.", original);
+    }
+
+    return 0;
+}
+```
+**Input:**
+```
+enter value of n: 1234
+```
+**Output:**
+```
+1234 is a magic number.
+```
